@@ -6,7 +6,7 @@ This is a **single-page semantic HTML reference website** created for my HTML Fu
 
 - To explain **what the Internet is** and **how it works**.
 - To describe **Internet services**, **web browsers**, and **DNS**.
-- To provide examples and explanations for **75+ HTML tags**.
+- To provide examples and explanations for **75 HTML tags**.
 - To demonstrate proper **semantic HTML5 structure** for accessibility and SEO.
 
 ## Usage
