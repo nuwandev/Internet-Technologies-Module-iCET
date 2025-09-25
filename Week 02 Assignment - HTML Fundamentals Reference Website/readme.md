@@ -14,3 +14,6 @@ This is a **single-page semantic HTML reference website** created for my HTML Fu
 - Open `index.html` in a web browser.
 - Navigate through tags using the **navbar**.
 - Review examples to learn correct HTML usage.
+
+
+(OR23106047 Theekshana Nuwan)
