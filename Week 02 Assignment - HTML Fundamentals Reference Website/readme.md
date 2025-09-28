@@ -2,6 +2,8 @@
 
 This is a **single-page semantic HTML reference website** created for my HTML Fundamentals assignment at the Institute of Computer Engineering Technology.
 
+https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2002%20Assignment%20-%20HTML%20Fundamentals%20Reference%20Website/
+
 ## Purpose
 
 - To explain **what the Internet is** and **how it works**.
