@@ -1,0 +1,42 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+section {
+  border: 2px solid;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+section h1 {
+  text-align: center;
+}
+
+.box {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.box-a {
+  background: rgb(15, 153, 207);
+}
+
+.box-b {
+  background: rgb(187, 68, 68);
+}
+
+.box-c {
+  background: rgb(39, 175, 39);
+}
+
+.flex-box {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
