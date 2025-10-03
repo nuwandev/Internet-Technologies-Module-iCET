@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics Page - SCC</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <section class="navbar">
+      <nav>
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="logo" />
+            <h2>Siripura Central College</h2>
+          </a>
+        </div>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="about-us.html"><li>About Us</li></a>
+          <a class="active" href="academics.html"><li>Academics</li></a>
+          <a href="contact.html"><li>Contacts Us</li></a>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="curriculum">
+      <div class="sector primary-sector">
+        <h1>PRIMARY SECTOR</h1>
+
+        <p>
+          The primary section consists of grades 1 to 5. The following subjects
+          are taught under the guidance of dedicated teachers and parents, who
+          are committed to the development of students' academic and
+          extracurricular activities at this crucial stage, laying a good
+          foundation for higher education.
+        </p>
+
+        <ul>
+          <li>- Sinhala</li>
+          <li>- Buddhism</li>
+          <li>- Mathematics</li>
+          <li>- Environment</li>
+          <li>- English</li>
+          <li>- Tamil</li>
+        </ul>
+      </div>
+
+      <div class="sector secondary-sector hide">
+        <h1>SECONDARY SECTOR</h1>
+
+        <p>
+          Our school provides education up to grade 13, ensuring a continuous
+          education for one year out of 13.
+        </p>
+
+        <ul>
+          <li>- Mathematics</li>
+          <li>- Arts</li>
+          <li>- Science</li>
+          <li>- Commerce</li>
+        </ul>
+
+        <p>These studies are carried out under the subject headings.</p>
+
+        <table class="stream-table">
+          <tr>
+            <th colspan="4" class="stream-name">Science Stream</th>
+          </tr>
+          <tr>
+            <td>Biology</td>
+            <td>Chemistry</td>
+            <td>Physics</td>
+            <td>Agriculture</td>
+          </tr>
+          <tr>
+            <td>Combined Mathematics</td>
+            <td>Information and Communication Technology</td>
+            <td>English</td>
+            <td>-</td>
+          </tr>
+        </table>
+
+        <table class="stream-table">
+          <tr>
+            <th colspan="4" class="stream-name">Arts Stream</th>
+          </tr>
+          <tr>
+            <td>Sinhala Language and Literature</td>
+            <td>Economics</td>
+            <td>English</td>
+            <td>Geography</td>
+          </tr>
+          <tr>
+            <td>History</td>
+            <td>Political Science</td>
+            <td>Music</td>
+            <td>Drawings</td>
+          </tr>
+          <tr>
+            <td>Dance</td>
+            <td>Information and Communication Technology</td>
+            <td>Drama and Performing Arts</td>
+            <td>Agronomy</td>
+          </tr>
+        </table>
+
+        <table class="stream-table">
+          <tr>
+            <th colspan="4" class="stream-name">Commerce Stream</th>
+          </tr>
+          <tr>
+            <td>Economics</td>
+            <td>Information and Communication Technology</td>
+            <td>Business Studies</td>
+            <td>Accounting</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="sidebar">
+        <h1>Curriculum</h1>
+        <span class="btn-primary active" onclick="showPrimarySector()"
+          >Primary Sector</span
+        >
+        <br />
+        <span class="btn-secondary" onclick="showSecondarySector()"
+          >Secondary Sector</span
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-nav">
+        <h2>WHERE TO?</h2>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="about-us.html"><li>About Us</li></a>
+          <a href="academics.html"><li>Academics</li></a>
+          <a href="contact.html"><li>Contacts Us</li></a>
+        </ul>
+      </div>
+
+      <div class="bottom">
+        <div>
+          created by <a href="http://github.com/nuwandev">@nuwandev</a> for
+          coursework
+        </div>
+        <div>
+          <a href="#top">Go To Top</a>
+        </div>
+        <div>© 2025 nuwandev</div>
+      </div>
+    </footer>
+
+    <script>
+      // i had to write some js...
+      const primarySector = document.querySelector(".primary-sector");
+      const secondarySector = document.querySelector(".secondary-sector");
+      const primaryBtn = document.querySelector(".btn-primary");
+      const secondaryBtn = document.querySelector(".btn-secondary");
+
+      const showPrimarySector = () => {
+        secondarySector.classList.add("hide");
+        primarySector.classList.remove("hide");
+        secondaryBtn.classList.remove("active");
+        primaryBtn.classList.add("active");
+      };
+
+      const showSecondarySector = () => {
+        primarySector.classList.add("hide");
+        secondarySector.classList.remove("hide");
+        secondaryBtn.classList.add("active");
+        primaryBtn.classList.remove("active");
+      };
+    </script>
+  </body>
+</html>
