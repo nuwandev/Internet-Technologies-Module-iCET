@@ -9,6 +9,7 @@
 ### Week 03
 
 - [Support Session 1](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2003%20Support%20Session%201/)
+- [Assignment - HTML School Website (non-responsive)](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2003%20Assignment%20-%20School%20Website%20Design/index.html)
 - [Week 03 Main](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2003/)
 
 ### Week 02
