@@ -2,6 +2,10 @@
 
 ## HTML Pages
 
+### Week 06 
+
+- [Week 06 Main](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2006/index.html)
+
 ### Week 05
 
 - [Assignment - Day of the Week Finder](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2005%20Assignment%20-%20Day%20of%20the%20Week%20Finder/)
