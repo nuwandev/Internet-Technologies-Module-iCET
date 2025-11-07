@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body data-page="items">
+    <a href="index.html">Home</a>
+    <br />
+    <h2>Add Item</h2>
+    <table class="add-item-form">
+      <tr>
+        <td>Name</td>
+        <td><input id="name" type="text" /></td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td><input id="qty" type="number" /></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td><input id="price" type="number" /></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><textarea name="" id="desc"></textarea></td>
+      </tr>
+      <tr>
+        <td><input id="addItemBtn" type="submit" value="Add" /></td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <h2>View Items</h2>
+
+    <table class="itemInfo" border="1"></table>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
