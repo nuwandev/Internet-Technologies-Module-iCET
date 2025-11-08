@@ -1,0 +1,25 @@
+{
+  "name": "workdir",
+  "version": "1.0.0",
+  "description": "- [Assignment - Day of the Week Finder](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2005%20Assignment%20-%20Day%20of%20the%20Week%20Finder/)\r - [Week 05 Main](https://nuwandev.github.io/Internet-Technologies-Module-iCET/Week%2005/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuwandev/Internet-Technologies-Module-iCET.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nuwandev/Internet-Technologies-Module-iCET/issues"
+  },
+  "homepage": "https://github.com/nuwandev/Internet-Technologies-Module-iCET#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
