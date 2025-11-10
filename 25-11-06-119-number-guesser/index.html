@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guesser</title>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <!-- Run this command: 
+     npx @tailwindcss/cli -i ./25-11-06-119-number-guesser/css/style.css -o ./25-11-06-119-number-guesser/css/tailwind.css --watch
+      -->
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen">
+      <div
+        class="relative bg-slate-200 w-[400px] h-[350px] flex justify-center items-center flex-col"
+      >
+        <p class="absolute top-5 text-2xl font-bold" id="attempts">attempts</p>
+        <h1 class="text-4xl text-center font-bold">Number Guesser</h1>
+        <p class="text-center mb-5">Number is between 1 - 10</p>
+        <input type="number" class="border-2 py-1 px-3" />
+        <button
+          id="guessBtn"
+          class="border-2 bg-gray-500 text-white border-black px-6 mt-2 py-0.5 cursor-pointer hover:bg-gray-700"
+        >
+          Guess
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
