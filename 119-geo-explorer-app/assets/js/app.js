@@ -95,165 +95,293 @@ async function handleSearch(value) {
       searchInput.value = weatherData.location.name;
     }
 
-    /**
-     * weather data
-     */
-    // header
-    document.querySelector(
-      "#locationName"
-    ).textContent = `${weatherData.location.name}, ${weatherData.location.country}`;
-    document.querySelector("#localTime").textContent =
-      weatherData.location.localtime;
-    document.querySelector("#weatherIcon").src =
-      weatherData.current.condition.icon;
-    document.querySelector("#conditionText").textContent =
-      weatherData.current.condition.text;
-    document.querySelector("#tempC").textContent = weatherData.current.temp_c;
+    const fields = {
+      /**
+       * weather data
+       */
+      locationName: {
+        type: "text",
+        get: () =>
+          `${weatherData.location.name}, ${weatherData.location.country}`,
+      },
+      localTime: {
+        type: "text",
+        get: () => weatherData.location.localtime,
+      },
+      weatherIcon: {
+        type: "attr",
+        attr: "src",
+        get: () => weatherData.current.condition.icon,
+      },
+      conditionText: {
+        type: "text",
+        get: () => weatherData.current.condition.text,
+      },
+      tempC: {
+        type: "text",
+        get: () => weatherData.current.temp_c,
+      },
+      feelsLike: {
+        type: "text",
+        get: () => weatherData.current.feelslike_c,
+      },
+      humidity: {
+        type: "text",
+        get: () => weatherData.current.humidity,
+      },
+      windKph: {
+        type: "text",
+        get: () => weatherData.current.wind_kph,
+      },
+      uv: {
+        type: "text",
+        get: () => weatherData.current.uv,
+      },
+      pressure: {
+        type: "text",
+        get: () => weatherData.current.pressure_in,
+      },
+      precip: {
+        type: "text",
+        get: () => weatherData.current.precip_in,
+      },
+      cloud: {
+        type: "text",
+        get: () => weatherData.current.cloud,
+      },
+      dewpoint: {
+        type: "text",
+        get: () => weatherData.current.dewpoint_c,
+      },
+      visibility: {
+        type: "text",
+        get: () => weatherData.current.vis_km,
+      },
+      windDir: {
+        type: "text",
+        get: () => weatherData.current.wind_dir,
+      },
+      shortRad: {
+        type: "text",
+        get: () => weatherData.current.short_rad,
+      },
+      diffRad: {
+        type: "text",
+        get: () => weatherData.current.diff_rad,
+      },
+      gti: {
+        type: "text",
+        get: () => weatherData.current.gti,
+      },
+      /**
+       * country data
+       */
+      countryName: {
+        type: "text",
+        get: () => country.name.common,
+      },
+      countryOfficialName: {
+        type: "text",
+        get: () => country.name.official,
+      },
+      countryFlag: {
+        type: "html",
+        get: () => `<img src="${country.flags.png}" class="w-[150px]">`,
+      },
+      capital: {
+        type: "text",
+        get: () => country.capital,
+      },
+      population: {
+        type: "text",
+        get: () => country.population,
+      },
+      area: {
+        type: "text",
+        get: () => country.area,
+      },
+      region: {
+        type: "text",
+        get: () => country.region,
+      },
+      subregion: {
+        type: "text",
+        get: () => country.subregion,
+      },
+      coordinates: {
+        type: "text",
+        get: () => country.latlng.join(", "),
+      },
+      continents: {
+        type: "text",
+        get: () => country.continents,
+      },
+      landlocked: {
+        type: "text",
+        get: () => country.landlocked,
+      },
+      timezones: {
+        type: "text",
+        get: () => country.timezones,
+      },
+      gini: {
+        type: "text",
+        get: () => {
+          if (!country.gini) return "-";
 
-    // quick stats
-    document.querySelector("#feelsLike").textContent =
-      weatherData.current.feelslike_c;
-    document.querySelector("#humidity").textContent =
-      weatherData.current.humidity;
-    document.querySelector("#windKph").textContent =
-      weatherData.current.wind_kph;
-    document.querySelector("#uv").textContent = weatherData.current.uv;
+          const key = Object.keys(country.gini)[0];
+          return `${country.gini[key]}${key}`;
+        },
+      },
+      languages: {
+        type: "html",
+        get: () =>
+          Object.values(country.languages)
+            .map(
+              (lang) =>
+                `
+            <div class="bg-white p-3 rounded border border-gray-200">
+              <span class="text-gray-900">${country.languages[lang]}</span>
+            </div>
+            `
+            )
+            .join(""),
+      },
+      currencies: {
+        type: "html",
+        get: () =>
+          Object.values(country.currencies).map(
+            (currency) =>
+              `<div class="bg-white p-3 rounded border border-gray-200">
+              <p class="font-semibold text-gray-900">${currency.name}</p>
+              <p class="text-lg text-gray-700 mt-1">${currency.symbol}</p>
+            </div>`
+          ),
+      },
+      cca2: {
+        type: "text",
+        get: () => country.cca2,
+      },
+      cca3: {
+        type: "text",
+        get: () => country.cca3,
+      },
+      ccn3: {
+        type: "text",
 
-    // atmospheric info
-    document.querySelector("#pressure").textContent =
-      weatherData.current.pressure_in;
-    document.querySelector("#precip").textContent =
-      weatherData.current.precip_in;
-    document.querySelector("#cloud").textContent = weatherData.current.cloud;
-    document.querySelector("#dewpoint").textContent =
-      weatherData.current.dewpoint_c;
-    document.querySelector("#visibility").textContent =
-      weatherData.current.vis_km;
-    document.querySelector("#windDir").textContent =
-      weatherData.current.wind_dir;
+        get: () => country.ccn3,
+      },
+      cioc: {
+        type: "text",
+        get: () => country.cioc,
+      },
+      fifa: {
+        type: "text",
+        get: () => country.fifa,
+      },
+      callingCode: {
+        type: "text",
+        get: () => country.idd.root + country.idd.suffixes[0],
+      },
+      nativeNames: {
+        type: "html",
+        get: () =>
+          Object.values(country.name.nativeName)
+            .map(
+              (nn) =>
+                `<div class="bg-white p-3 rounded border border-gray-200">
+                  <p class="font-semibold text-gray-900">${nn.common}</p>
+                  <p class="text-gray-700 text-sm mt-1">${nn.official}</p>
+                </div>`
+            )
+            .join(""),
+      },
+      tld: {
+        type: "text",
+        get: () => country.tld.join(", "),
+      },
+      carSide: {
+        type: "text",
+        get: () => country.car.side,
+      },
+      carSigns: {
+        type: "text",
+        get: () => country.car.signs.join(", "),
+      },
+      postalCode: {
+        type: "text",
+        get: () => country.postalCode.format,
+      },
+      unMember: {
+        type: "text",
+        get: () => country.unMember,
+      },
+      independent: {
+        type: "text",
+        get: () => country.independent,
+      },
+      status: {
+        type: "text",
+        get: () => country.status,
+      },
+      demonyms: {
+        type: "html",
+        get: () =>
+          Object.entries(country.demonyms)
+            .map(
+              ([lang, d]) =>
+                `<div class="bg-white p-4 rounded border border-gray-200">
+              <p class="font-semibold text-gray-900">${lang.toUpperCase()}</p>
+              <p class="text-gray-700 mt-1">Male: ${d.m}</p>
+              <p class="text-gray-700">Female: ${d.f}</p>
+            </div>
+            `
+            )
+            .join(""),
+      },
+      altSpellings: {
+        type: "text",
+        get: () => country.altSpellings.join(", "),
+      },
+      translations: {
+        type: "html",
+        get: () =>
+          Object.entries(country.translations)
+            .map(
+              ([lang, t]) =>
+                `<div class="bg-white p-4 rounded border border-gray-200">
+                  <p class="font-semibold text-gray-900">${lang.toUpperCase()}</p>
+                  <p class="text-gray-700 mt-1">${t.common}</p>
+                  <p class="text-gray-500 text-sm">${t.official}</p>
+                </div>`
+            )
+            .join(""),
+      },
+    };
 
-    // solar data
-    document.querySelector("#shortRad").textContent =
-      weatherData.current.short_rad;
-    document.querySelector("#diffRad").textContent =
-      weatherData.current.diff_rad;
-    document.querySelector("#gti").textContent = weatherData.current.gti;
+    Object.entries(fields).forEach(([id, field]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
 
-    /**
-     * country data
-     */
-    document.querySelector("#countryName").textContent = country.name.common;
-    document.querySelector("#countryOfficialName").textContent =
-      country.name.official;
+      const value = field.get();
 
-    document.querySelector(
-      "#countryFlag"
-    ).innerHTML = `<img src="${country.flags.png}" class="w-[150px]">`;
+      switch (field.type) {
+        case "text":
+          el.textContent = value;
+          break;
 
-    document.querySelector("#capital").textContent = country.capital;
-    document.querySelector("#population").textContent = country.population;
-    document.querySelector("#area").textContent = country.area;
-    document.querySelector("#region").textContent = country.region;
+        case "html":
+          el.innerHTML = value;
+          break;
 
-    document.querySelector("#subregion").textContent = country.subregion;
-    document.querySelector("#coordinates").textContent =
-      country.latlng.join(", ");
-    document.querySelector("#continents").textContent = country.continents;
-    document.querySelector("#landlocked").textContent = country.landlocked;
-    document.querySelector("#timezones").textContent = country.timezones;
+        case "attr":
+          el[field.attr] = value;
+          break;
 
-    if (country.gini == undefined) {
-      document.querySelector("#gini").textContent = "-";
-    } else {
-      document.querySelector("#gini").textContent =
-        country.gini[Object.keys(country.gini)[0]] +
-        Object.keys(country.gini)[0];
-    }
-
-    let languagesBody = "";
-    for (const lang in country.languages) {
-      languagesBody += `
-          <div class="bg-white p-3 rounded border border-gray-200">
-            <span class="text-gray-900">${country.languages[lang]}</span>
-          </div>
-          `;
-    }
-    document.querySelector("#languages").innerHTML = languagesBody;
-
-    let currenciesBody = "";
-    for (const currency in country.currencies) {
-      currenciesBody += `
-          <div class="bg-white p-3 rounded border border-gray-200">
-            <p class="font-semibold text-gray-900">
-              ${country.currencies[currency].name}
-            </p>
-            <p class="text-lg text-gray-700 mt-1">${country.currencies[currency].symbol}</p>
-          </div>
-      `;
-    }
-    document.querySelector("#currencies").innerHTML = currenciesBody;
-
-    document.querySelector("#cca2").textContent = country.cca2;
-    document.querySelector("#cca3").textContent = country.cca3;
-    document.querySelector("#ccn3").textContent = country.ccn3;
-    document.querySelector("#cioc").textContent = country.cioc;
-    document.querySelector("#fifa").textContent = country.fifa;
-    document.querySelector("#callingCode").textContent =
-      country.idd.root + country.idd.suffixes[0];
-
-    let nativeBody = "";
-    for (const lang in country.name.nativeName) {
-      const nn = country.name.nativeName[lang];
-      nativeBody += `
-    <div class="bg-white p-3 rounded border border-gray-200">
-      <p class="font-semibold text-gray-900">${nn.common}</p>
-      <p class="text-gray-700 text-sm mt-1">${nn.official}</p>
-    </div>
-  `;
-    }
-    document.querySelector("#nativeNames").innerHTML = nativeBody;
-
-    document.querySelector("#tld").textContent = country.tld.join(", ");
-
-    document.querySelector("#carSide").textContent = country.car.side;
-    document.querySelector("#carSigns").textContent =
-      country.car.signs.join(", ");
-
-    document.querySelector("#postalCode").textContent =
-      country.postalCode.format;
-
-    document.querySelector("#unMember").textContent = country.unMember;
-    document.querySelector("#independent").textContent = country.independent;
-    document.querySelector("#status").textContent = country.status;
-
-    let demonymsBody = "";
-    for (const lang in country.demonyms) {
-      const d = country.demonyms[lang];
-      demonymsBody += `
-    <div class="bg-white p-4 rounded border border-gray-200">
-      <p class="font-semibold text-gray-900">${lang.toUpperCase()}</p>
-      <p class="text-gray-700 mt-1">Male: ${d.m}</p>
-      <p class="text-gray-700">Female: ${d.f}</p>
-    </div>
-  `;
-    }
-    document.querySelector("#demonyms").innerHTML = demonymsBody;
-
-    document.querySelector("#altSpellings").textContent =
-      country.altSpellings.join(", ");
-
-    let translationsBody = "";
-    for (const lang in country.translations) {
-      const t = country.translations[lang];
-      translationsBody += `
-    <div class="bg-white p-4 rounded border border-gray-200">
-      <p class="font-semibold text-gray-900">${lang.toUpperCase()}</p>
-      <p class="text-gray-700 mt-1">${t.common}</p>
-      <p class="text-gray-500 text-sm">${t.official}</p>
-    </div>
-  `;
-    }
-    document.querySelector("#translations").innerHTML = translationsBody;
+        default:
+          console.warn("Unknown field type:", field.type);
+      }
+    });
   } catch (error) {
     notFoundState.classList.remove("hidden");
     loader.classList.add("hidden");
