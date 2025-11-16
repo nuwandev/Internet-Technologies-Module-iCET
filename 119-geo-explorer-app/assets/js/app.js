@@ -5,7 +5,23 @@ const loader = document.getElementById("loader");
 const informationContainer = document.getElementById("informationContainer");
 const suggestionsList = document.getElementById("suggestionsList");
 
-document.querySelector('input[type="search"]').addEventListener(
+document.addEventListener("DOMContentLoaded", () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        emptyState.classList.add("hidden");
+        handleSearch(`${latitude},${longitude}`);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+});
+
+searchInput.addEventListener(
   "input",
   debounce((e) => {
     const value = e.target.value.trim();
@@ -75,6 +91,9 @@ async function handleSearch(value) {
 
     loader.classList.add("hidden");
     informationContainer.classList.remove("opacity-0");
+    if (searchInput.value.trim() === "") {
+      searchInput.value = weatherData.location.name;
+    }
 
     /**
      * weather data
