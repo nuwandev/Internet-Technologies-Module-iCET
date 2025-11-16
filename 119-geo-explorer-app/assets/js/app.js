@@ -3,17 +3,19 @@ const emptyState = document.getElementById("emptyState");
 const notFoundState = document.getElementById("notFoundState");
 const loader = document.getElementById("loader");
 const informationContainer = document.getElementById("informationContainer");
+const suggestionsList = document.getElementById("suggestionsList");
 
 document.querySelector('input[type="search"]').addEventListener(
   "input",
   debounce((e) => {
     const value = e.target.value.trim();
 
-    if (value === "") {
+    if (!value) {
       emptyState.classList.remove("hidden");
       loader.classList.add("hidden");
       notFoundState.classList.add("hidden");
       informationContainer.classList.add("opacity-0");
+      suggestionsList.innerHTML = "";
       return;
     }
 
@@ -21,15 +23,47 @@ document.querySelector('input[type="search"]').addEventListener(
     loader.classList.remove("hidden");
     informationContainer.classList.add("opacity-0");
     notFoundState.classList.add("hidden");
-
-    handleSearch(e);
-  }, 500)
+    renderSuggestions(value);
+    handleSearch(value);
+  }, 400)
 );
 
-async function handleSearch(e) {
+async function renderSuggestions(value) {
+  try {
+    const res = await fetch(
+      `https://api.geoapify.com/v1/geocode/autocomplete?text=${value}&type=city&limit=10&format=json&apiKey=bc0aa38ff5c54ea2bdcea7bfcc888d43`
+    );
+
+    const data = await res.json();
+    const suggestions = data.results;
+
+    let suggestionsBody = "";
+    suggestions.forEach((suggestion) => {
+      suggestionsBody += `
+        <li onclick="handleSuggestionClick('${
+          suggestion.city || suggestion.county
+        }')" class="cursor-pointer hover:bg-gray-100 px-4 py-2.5 border-b-2 border-gray-200">
+          ${suggestion.city || suggestion.county}, ${suggestion.country}
+        </li>
+      `;
+    });
+
+    suggestionsList.innerHTML = suggestionsBody;
+  } catch (error) {
+    console.error("Error fetching suggestions:", error);
+  }
+}
+
+function handleSuggestionClick(value) {
+  searchInput.value = value;
+  suggestionsList.innerHTML = "";
+  handleSearch(value);
+}
+
+async function handleSearch(value) {
   try {
     const weatherRes = await fetch(
-      ` http://api.weatherapi.com/v1/current.json?key=35c6b141e18644adbf490250251211&q=${e.target.value.trim()}`
+      ` http://api.weatherapi.com/v1/current.json?key=35c6b141e18644adbf490250251211&q=${value}`
     );
     const weatherData = await weatherRes.json();
 
