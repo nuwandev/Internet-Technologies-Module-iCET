@@ -39,10 +39,13 @@ searchInput.addEventListener(
     loader.classList.remove("hidden");
     informationContainer.classList.add("opacity-0");
     notFoundState.classList.add("hidden");
-    renderSuggestions(value);
     handleSearch(value);
   }, 400)
 );
+
+searchInput.addEventListener("input", (e) => {
+  renderSuggestions(e.target.value.trim());
+});
 
 async function renderSuggestions(value) {
   try {
