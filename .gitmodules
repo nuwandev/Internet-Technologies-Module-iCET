@@ -1,0 +1,3 @@
+[submodule "projects/geo-explorer"]
+	path = projects/geo-explorer
+	url = https://github.com/nuwandev/geo-explorer.git
