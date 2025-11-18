@@ -1,3 +1,6 @@
 [submodule "projects/geo-explorer"]
 	path = projects/geo-explorer
 	url = https://github.com/nuwandev/geo-explorer.git
+[submodule "projects/customer-item-form"]
+	path = projects/customer-item-form
+	url = https://github.com/nuwandev/customer-item-form.git
