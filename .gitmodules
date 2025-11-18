@@ -4,3 +4,6 @@
 [submodule "projects/customer-item-form"]
 	path = projects/customer-item-form
 	url = https://github.com/nuwandev/customer-item-form.git
+[submodule "projects/day-of-week-finder"]
+	path = projects/day-of-week-finder
+	url = https://github.com/nuwandev/day-of-week-finder.git
