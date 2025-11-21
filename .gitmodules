@@ -10,3 +10,6 @@
 [submodule "projects/html-reference-website"]
 	path = projects/html-reference-website
 	url = https://github.com/nuwandev/html-reference-website.git
+[submodule "projects/KoopeKade-web-AWTP"]
+	path = projects/KoopeKade-web-AWTP
+	url = https://github.com/iCET-Computer-Engineering-Technology/KoopeKade-web-AWTP.git
