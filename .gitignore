@@ -1,4 +1,5 @@
 *.pdf
+.txt
 
 node_modules/
 dist/
