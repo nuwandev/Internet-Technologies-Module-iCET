@@ -7,3 +7,6 @@
 [submodule "projects/day-of-week-finder"]
 	path = projects/day-of-week-finder
 	url = https://github.com/nuwandev/day-of-week-finder.git
+[submodule "projects/html-reference-website"]
+	path = projects/html-reference-website
+	url = https://github.com/nuwandev/html-reference-website.git
