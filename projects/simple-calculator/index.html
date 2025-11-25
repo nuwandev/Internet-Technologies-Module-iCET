@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      .btn {
+        border-radius: 0.25rem;
+        color: white;
+        padding: calc(var(--spacing) * 4);
+        margin: calc(var(--spacing) * 2);
+        min-width: 4rem;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen">
+      <div
+        class="bg-gray-200 shadow-2xl broder-rounded-lg p-6 space-y-4 border-2 border-white"
+      >
+        <div class="relative min-w-full">
+          <span class="absolute right-5 text-gray-500" id="preview">0</span>
+          <input
+            type="text"
+            id="display"
+            class="w-full bg-gray-50 px-5 text-3xl py-1 pt-4 rounded-sm text-right border-2 border-gray-700 outline-0 cursor-text select-none overflow-x-auto"
+            value=""
+            readonly
+            style="white-space: nowrap; text-overflow: clip; direction: rtl"
+          />
+        </div>
+        <div class="grid grid-cols-4 gap-1">
+          <button class="btn operationBtn bg-blue-500" value="%">%</button>
+          <button class="btn operationBtn bg-blue-500" value="/">/</button>
+          <button class="btn actionBtn bg-blue-500" value="C">C</button>
+          <button class="btn actionBtn bg-green-500" value="Back">Back</button>
+          <button class="btn numberBtn bg-gray-500" value="7">7</button>
+          <button class="btn numberBtn bg-gray-500" value="8">8</button>
+          <button class="btn numberBtn bg-gray-500" value="9">9</button>
+          <button class="btn operationBtn bg-blue-500" value="X">X</button>
+          <button class="btn numberBtn bg-gray-500" value="4">4</button>
+          <button class="btn numberBtn bg-gray-500" value="5">5</button>
+          <button class="btn numberBtn bg-gray-500" value="6">6</button>
+          <button class="btn operationBtn bg-blue-500" value="-">-</button>
+          <button class="btn numberBtn bg-gray-500" value="1">1</button>
+          <button class="btn numberBtn bg-gray-500" value="2">2</button>
+          <button class="btn numberBtn bg-gray-500" value="3">3</button>
+          <button class="btn operationBtn bg-blue-500" value="+">+</button>
+          <button class="btn numberBtn bg-gray-500" value="00">00</button>
+          <button class="btn numberBtn bg-gray-500" value="0">0</button>
+          <button class="btn numberBtn bg-gray-500" value=".">.</button>
+          <button class="btn actionBtn bg-blue-500" value="=">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
