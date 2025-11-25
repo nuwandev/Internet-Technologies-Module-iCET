@@ -16,3 +16,6 @@
 [submodule "projects/school-website"]
 	path = projects/school-website
 	url = https://github.com/nuwandev/school-website-activity.git
+[submodule "projects/chat-bot"]
+	path = projects/chat-bot
+	url = https://github.com/nuwandev/chat-bot.git
