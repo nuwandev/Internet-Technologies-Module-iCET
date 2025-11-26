@@ -19,3 +19,6 @@
 [submodule "projects/chat-bot"]
 	path = projects/chat-bot
 	url = https://github.com/nuwandev/chat-bot.git
+[submodule "courseworks/Final-Coursework-02-pos/grillMaster-pos"]
+	path = courseworks/Final-Coursework-02-pos/grillMaster-pos
+	url = https://github.com/nuwandev/GrillMaster-POS.git
