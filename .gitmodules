@@ -22,3 +22,7 @@
 [submodule "courseworks/Final-Coursework-02-pos/grillMaster-pos"]
 	path = courseworks/Final-Coursework-02-pos/grillMaster-pos
 	url = https://github.com/nuwandev/GrillMaster-POS.git
+[submodule "projects/todo-app"]
+	path = projects/todo-app
+	url = https://github.com/nuwandev/todo-app.git
+	branch = main
