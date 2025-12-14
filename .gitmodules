@@ -26,3 +26,6 @@
 	path = projects/todo-app
 	url = https://github.com/nuwandev/todo-app.git
 	branch = main
+[submodule "projects/number-guessing-game"]
+	path = projects/number-guessing-game
+	url = https://github.com/nuwandev/number-guessing-game.git
