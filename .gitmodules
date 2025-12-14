@@ -29,3 +29,6 @@
 [submodule "projects/number-guessing-game"]
 	path = projects/number-guessing-game
 	url = https://github.com/nuwandev/number-guessing-game.git
+[submodule "projects/simple-calculator"]
+	path = projects/simple-calculator
+	url = https://github.com/nuwandev/simple-calculator.git
