@@ -5,6 +5,6 @@ node_modules/
 dist/
 .env
 
-# remove later and commit;
-Week 06 - Personal Portfolio Website Assignment
 git-submodule-help.txt
+
+courseworks/
